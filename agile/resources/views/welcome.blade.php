@@ -36,6 +36,19 @@
                     
                 </div>
             @endif
+
+            <div>
+            @if (Route::has('loginAdmin'))
+                <div class="hidden fixed top-0 right-1 px-6 py-4 sm:block">
+                    @auth
+                        <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 underline">Dashboard</a>
+                    @else
+                        <a href="{{ route('loginAdmin') }}" class="text-sm text-gray-700 underline">AdminLogin</a>
+
+                    @endauth
+                    
+                </div>
+            @endif
             
 
             <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
